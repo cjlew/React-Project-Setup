@@ -41,9 +41,9 @@ Create a `lib`, and `stylesheets` folder
 
 `mkdir lib stylesheets`
 
-Within the `lib` folder create your `app.js`
+Within the `lib` folder create your `app.jsx`
 
-`touch app.js`
+`touch app.jsx`
 
 ### Step 2: Installing Dependencies
 
@@ -96,7 +96,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: './lib/app.js',
+    entry: './lib/app.jsx',
     output: {
         path: path.resolve(__dirname),
         filename: './lib/bundle.js'
@@ -135,7 +135,7 @@ This will let you use `npm run build` to install all your dependencies and setup
 
 ### Step 4: Setup Your Entry File
 
-Open your `app.js` and add
+Open your `app.jsx` and add
 ```
 import React from 'react';
 import ReactDOM from 'react-dom';
