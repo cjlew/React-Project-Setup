@@ -24,3 +24,34 @@ Create a `lib`, and `stylesheets` folder
 Within the `lib` folder create your `app.js`
 
 `touch app.js`
+
+### Step 2: Setup Webpack and Babel
+
+First lets setup our `package.json`
+The `package.json` is used to provide metadata for the project and allows npm to see what dependencies (babel, react, etc...) the project has.
+
+Navigate to the root directory of your project and begin setting up your `package.json`
+
+`npm init`
+
+Press the return key and follow along in the terminal and fill in the metadata for your project until your `package.json` is completed
+
+Now that we have our `package.json` setup we will begin to install our dependencies
+
+For React
+`npm install react react-dom --save-`
+
+For Babal
+`npm install babel-core babel-loader --save`
+
+For Webpack
+`npm install webpack --save`
+
+For presets
+`npm install babel-preset-env babel-preset-react --save`
+
+
+
+
+
+
