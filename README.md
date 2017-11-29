@@ -17,6 +17,25 @@ Enter the directory
 
 `cd MyProject`
 
+Create an `index.html`
+
+`touch index.html`
+
+Add the following to the `index.html` to setup the file
+
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MyProject</title>
+  </head>
+  <body>
+
+  </body>
+</html>
+
+```
 Create a `lib`, and `stylesheets` folder
 
 `mkdir lib stylesheets`
@@ -35,6 +54,24 @@ Navigate to the root directory of your project and begin setting up your `packag
 `npm init`
 
 Press the return key and follow along in the terminal and fill in the metadata for your project until your `package.json` is completed
+
+It should look something like this
+
+```
+{
+  "name": "MyProject",
+  "version": "1.0.0",
+  "description": "MyProject is a great react application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "cjlew",
+  "license": "ISC"
+}
+
+
+```
 
 Now that we have our `package.json` setup we will begin to install our dependencies
 
@@ -66,13 +103,18 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.js$/,
+                test: [/\.jsx?$/, /\.js?$/],
+                exclude: /node_modules/,
                 loader: 'babel-loader',
                 query: {
                     presets: ['es2015', 'react']
                 }
             }
         ]
+    },
+    devtool: 'source-map',
+    resolve: {
+     extensions: [".js", ".jsx", "*"]
     },
 };
 
@@ -83,11 +125,12 @@ Edit the `package.json` by including webpack in your scripts
 ```
 ...
 "scripts": {
-    "build": "webpack"
+    "build": "webpack --watch"
   },
 ...
 
 ```
+This will let you use `npm run build` to setup your webpack and have webpack continually update your bundle as you work 
 
 
 
