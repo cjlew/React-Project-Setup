@@ -95,10 +95,10 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: './js/app.js',
+    entry: './lib/app.js',
     output: {
         path: path.resolve(__dirname),
-        filename: './js/bundle.js'
+        filename: './lib/bundle.js'
     },
     module: {
         loaders: [
@@ -125,12 +125,15 @@ Edit the `package.json` by including webpack in your scripts
 ```
 ...
 "scripts": {
-    "build": "webpack --watch"
+    "build": "npm install && webpack --watch"
   },
 ...
 
 ```
-This will let you use `npm run build` to setup your webpack and have webpack continually update your bundle as you work 
+This will let you use `npm run build` to install all your dependencies and setup your webpack to continually update your bundle as you work 
+
+
+Now you should be ready to begin your project!
 
 
 
