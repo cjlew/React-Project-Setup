@@ -31,7 +31,8 @@ Add the following to the `index.html` to setup the file
     <title>MyProject</title>
   </head>
   <body>
-
+  <div id='root'>
+  </div>
   </body>
 </html>
 
@@ -132,6 +133,18 @@ Edit the `package.json` by including webpack in your scripts
 ```
 This will let you use `npm run build` to install all your dependencies and setup your webpack to continually update your bundle as you work 
 
+### Step 4: Setup Your Entry File
+
+Open your `app.js` and add
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+ReactDOM.render(
+  document.getElementById('root')
+);
+
+```
 
 Now you should be ready to begin your project!
 
